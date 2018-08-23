@@ -1,1 +1,40 @@
 #+TITLE: RSE Interview
+
+* IC-POS
+
+** Introduction
+
+Our supermarket sells three items, each of which has a stock-keeping code and a price.
+Multibuy offers are applicable to some items.
+Your objective is to implement the logic behind a Point of Sale (POS) system for our supermarket
+using the Python programming language.
+
+** Pricing
+
+|--------+------+------------------------+----------------------------|
+| Item   | Code | Price (each, in pence) | Offer                      |
+|--------+------+------------------------+----------------------------|
+| Apple  | A    |                     25 | Three for the price of two |
+| Banana | B    |                     40 | Three for £1               |
+| Pear   | P    |                     30 | None                       |
+|--------+------+------------------------+----------------------------|
+
+** Tasks
+
+*** TODO Create a source file containing a function named checkout
+
+The ~checkout~ function should take a list of item codes and their current prices and return the total
+price in pence, after applying any relevant offers.
+For example ~checkout(['B', 'A', 'B', 'P', 'B'], {'A':25, 'B':40, 'P':30}) should return 155.
+
+*** TODO Create a second source file containing code to verify the behaviour of checkout
+
+Invoke ~checkout~ with a list of items and their prices and assert that the correct total is returned.
+
+*** TODO Add an object type Checkout to your first source file
+
+~Checkout~ can be instantiated with the current prices, for example ~Checkout({'A':25, 'B':40,
+'P':30})~.
+It should provided two methods: ~scan(itemcode)~ and ~total()~.
+The latter should be callable at any time to obtain a correct total for the items scanned so far.
+Add test(s) for ~Checkout~ to your second source file.
