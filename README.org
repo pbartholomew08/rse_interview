@@ -28,6 +28,8 @@ The ~checkout~ function should take a list of item codes and their current price
 price in pence, after applying any relevant offers.
 For example ~checkout(['B', 'A', 'B', 'P', 'B'], {'A':25, 'B':40, 'P':30}) should return 155.
 
+Estimated time: 45 mins
+
 *** TODO Create a second source file containing code to verify the behaviour of checkout
 
 Invoke ~checkout~ with a list of items and their prices and assert that the correct total is returned.
