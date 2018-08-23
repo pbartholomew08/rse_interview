@@ -21,7 +21,8 @@ using the Python programming language.
 
 ** Tasks
 
-*** TODO Create a source file containing a function named checkout
+*** DONE Create a source file containing a function named checkout
+CLOSED: [2018-08-23 Thu 14:45]
 
 The ~checkout~ function should take a list of item codes and their current prices and return the total
 price in pence, after applying any relevant offers.
