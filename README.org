@@ -30,9 +30,12 @@ For example ~checkout(['B', 'A', 'B', 'P', 'B'], {'A':25, 'B':40, 'P':30}) shoul
 
 Estimated time: 45 mins
 
-*** TODO Create a second source file containing code to verify the behaviour of checkout
+*** DONE Create a second source file containing code to verify the behaviour of checkout
+CLOSED: [2018-08-26 Sun 13:33]
 
 Invoke ~checkout~ with a list of items and their prices and assert that the correct total is returned.
+
+Estimated time: 10 mins
 
 *** TODO Add an object type Checkout to your first source file
 
