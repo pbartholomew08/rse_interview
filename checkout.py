@@ -10,16 +10,24 @@
 def apple_offer(n, price_peritem):
 	""" Given the total number of apples, compute the price after applying offer. """
 
-	n_offer = 2 * (n / 3)
-	n_full = n - 3 * (n / 3)
-	return price_peritem * (n_full + n_offer)
+	offer_per = 3
+	offer_price = 2 * price_peritem
+
+	n_full = n % offer_per
+	n_offer = (n - n_full) / offer_per
+
+	return price_peritem * n_full + offer_price * n_offer
 
 def banana_offer(n, price_peritem):
 	""" Given the total number of bananas, compute the price after applying the offer. """
 
-	n_offer = n / 3
-	n_full = n - 3 * (n / 3)
-	return price_peritem * n_full + 100 * n_offer
+	offer_per = 3
+	offer_price = 100
+
+	n_full = n % offer_per
+	n_offer = (n - n_full) / offer_per
+
+	return price_peritem * n_full + offer_price * n_offer
 
 #
 # Set prices and any offers
