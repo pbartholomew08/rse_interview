@@ -32,7 +32,7 @@ OFFERS = {"A":apple_offer, "B":banana_offer}
 # checkout function, users should not have to modify
 #
 
-def checkout(itemcodes, prices=PRICE_LIST):
+def checkout(itemcodes, price_list=PRICE_LIST):
 	""" Given a list of item codes and a dictionary of their prices, return the total cost, after
 	applying any offers.
 	"""
@@ -52,10 +52,30 @@ def checkout(itemcodes, prices=PRICE_LIST):
 	total = 0
 	for item in item_totals:
 		n = item_totals[item]
-		p = prices[item]
+		p = price_list[item]
 		if item in OFFERS:
 			total += OFFERS[item](n, p)
 		else:
 			total += p * n
 
 	return total
+
+#
+# Checkout class
+#
+class Checkout(object):
+	""" Checkout class definition, takes a pricelist for instantiation and provides scan(itemcode) and
+	total() methods."""
+
+	def __init__(self, price_list):
+		""" Instantiate a new Checkout object. """
+		self.price_list = price_list
+		self.scanned_items = []
+
+	def scan(self, itemcode):
+		""" Scan an item. """
+		self.scanned_items.append(itemcode)
+
+	def total(self):
+		""" Return the total cost of scanned items. """
+		return checkout(self.scanned_items, self.price_list)

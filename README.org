@@ -37,10 +37,14 @@ Invoke ~checkout~ with a list of items and their prices and assert that the corr
 
 Estimated time: 10 mins
 
-*** TODO Add an object type Checkout to your first source file
+*** DONE Add an object type Checkout to your first source file
+CLOSED: [2018-08-27 Mon 13:10]
 
 ~Checkout~ can be instantiated with the current prices, for example ~Checkout({'A':25, 'B':40,
 'P':30})~.
 It should provided two methods: ~scan(itemcode)~ and ~total()~.
 The latter should be callable at any time to obtain a correct total for the items scanned so far.
 Add test(s) for ~Checkout~ to your second source file.
+
+Estimated time: 15 mins
+

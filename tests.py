@@ -65,5 +65,24 @@ class test_checkout_fns(unittest.TestCase):
 		checkout_total = checkout.checkout(purchase_list, price_dict)
 		self.assertEqual(expected_total, checkout_total)
 
+	def test_Checkout(self):
+		""" Test the Checkout class. """
+
+		# Test initialisation
+		teller = checkout.Checkout({"A":25, "B":40, "P":30})
+		self.assertTrue("A" in teller.price_list)
+		self.assertTrue("B" in teller.price_list)
+		self.assertTrue("P" in teller.price_list)
+		self.assertEqual(len(teller.scanned_items), 0)
+
+		# Test scanning items and totalling
+		teller.scan("B")
+		teller.scan("A")
+		teller.scan("B")
+		teller.scan("P")
+		teller.scan("B")
+		self.assertEqual(len(teller.scanned_items), 5)
+		self.assertEqual(teller.total(), 155)
+
 if __name__ == "__main__":
 	unittest.main()
